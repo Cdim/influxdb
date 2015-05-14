@@ -91,14 +91,14 @@ cpu
 ```
 ALL          ALTER        AS           ASC          BEGIN        BY
 CREATE       CONTINUOUS   DATABASE     DATABASES    DEFAULT      DELETE
-DESC         DROP         DURATION     END          EXISTS       EXPLAIN
-FIELD        FROM         GRANT        GROUP        IF           IN
-INNER        INSERT       INTO         KEY          KEYS         LIMIT
-SHOW         MEASUREMENT  MEASUREMENTS OFFSET       ON           ORDER
-PASSWORD     POLICY       POLICIES     PRIVILEGES   QUERIES      QUERY
-READ         REPLICATION  RETENTION    REVOKE       SELECT       SERIES
-SLIMIT       SOFFSET      TAG          TO           USER         USERS
-VALUES       WHERE        WITH         WRITE
+DESC         DISTINCT     DROP         DURATION     END          EXISTS
+EXPLAIN      FIELD        FROM         GRANT        GROUP        IF
+IN           INNER        INSERT       INTO         KEY          KEYS
+LIMIT        SHOW         MEASUREMENT  MEASUREMENTS OFFSET       ON
+ORDER        PASSWORD     POLICY       POLICIES     PRIVILEGES   QUERIES
+QUERY        READ         REPLICATION  RETENTION    REVOKE       SELECT
+SERIES       SLIMIT       SOFFSET      TAG          TO           USER
+USERS        VALUES       WHERE        WITH         WRITE
 ```
 
 ## Literals
@@ -568,7 +568,7 @@ REVOKE READ ON mydb FROM jdoe;
 ### SELECT
 
 ```
-select_stmt = fields from_clause [ into_clause ] [ where_clause ]
+select_stmt = [ "DISTINCT" ] fields from_clause [ into_clause ] [ where_clause ]
               [ group_by_clause ] [ order_by_clause ] [ limit_clause ]
               [ offset_clause ] [ slimit_clause ] [ soffset_clause ].
 ```
